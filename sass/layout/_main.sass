@@ -1,0 +1,58 @@
+.sa-main
+  background-image: url('../images/background.jpg')
+  display: flex
+  justify-content: center
+  padding: 15px 20px
+
+.sa-tasks
+  min-height: calc(100vh - 130px)
+  width: 70%
+
+  .sa-task-item
+    color: $black
+    font-size: .9em
+
+    &:hover, &.active
+      background-color: $light-blue
+
+      .sa-task-item__content
+        border-top-color: transparent
+
+        form
+          display: block
+
+      & + .sa-task-item .sa-task-item__content
+        border-top-color: transparent
+
+    &:first-of-type .sa-task-item__content
+      border-top: 0
+
+    &:last-of-type 
+      .sa-task-item__content
+        border-bottom: 1px solid $light-gray-100
+
+      &:hover, &.active
+        .sa-task-item__content
+          border-color: transparent
+
+    .sa-task-item__content
+      align-items: center
+      display: flex
+      border-top: 1px solid $light-gray-100
+      margin: 0 30px
+      padding: 10px 0
+      justify-content: space-between
+
+      img
+        margin-right: 10px
+
+      p
+        display: inline-block
+        vertical-align: super
+
+      form
+        display: none
+
+.sa-edit-task
+  margin-left: 15px
+  width: 50%
