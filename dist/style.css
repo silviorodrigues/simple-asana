@@ -374,7 +374,9 @@ template {
   .sa-card .sa-card__header {
     align-items: center;
     box-shadow: 0px 1px 3px 0px rgba(21, 27, 38, 0.1);
+    box-sizing: border-box;
     display: flex;
+    height: 50px;
     justify-content: space-between;
     padding: 10px 30px; }
 
@@ -416,5 +418,17 @@ template {
 .sa-edit-task {
   margin-left: 15px;
   width: 50%; }
+  .sa-edit-task .sa-edit-task__profile {
+    align-items: center;
+    font-size: 0.9em;
+    display: flex; }
+    .sa-edit-task .sa-edit-task__profile img {
+      margin-right: 10px; }
+    .sa-edit-task .sa-edit-task__profile form {
+      margin-left: 5px; }
+  .sa-edit-task .sa-edit-task__close {
+    align-self: flex-start;
+    cursor: pointer;
+    margin-right: -15px; }
 
 /*# sourceMappingURL=style.css.map */
