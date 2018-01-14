@@ -232,6 +232,7 @@ template {
   width: 70%; }
   .sa-tasks .sa-task-item {
     color: #151b26;
+    cursor: pointer;
     font-size: 0.9em; }
     .sa-tasks .sa-task-item:hover, .sa-tasks .sa-task-item.active {
       background-color: #edf8ff; }
