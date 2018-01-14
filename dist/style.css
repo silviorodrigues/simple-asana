@@ -353,7 +353,8 @@ template {
   height: 30px;
   position: relative;
   text-align: center;
-  width: 30px; }
+  width: 30px;
+  z-index: 1; }
   .sa-button-plus::after {
     background: inherit;
     border-radius: inherit;
