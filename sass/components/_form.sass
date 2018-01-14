@@ -1,0 +1,33 @@
+.sa-form
+  input, textarea
+    border: 1px solid $light-gray-200
+
+    &::-webkit-input-placeholder
+      color: $light-gray-300
+
+  .sa-search
+    position: relative
+
+    &::before
+      background-image: url("../images/search.png")
+      content: ''
+      height: 15px
+      left: 11px
+      position: absolute
+      top: 7px
+      width: 15px
+      z-index: 2
+
+    .sa-input-search
+      border-radius: 15px
+      height: 30px
+      outline: 0
+      padding: 0 15px 0 35px
+      width: 100%
+
+      &:focus
+        box-shadow: 0 0 3px $blue
+
+      &::-webkit-input-placeholder
+        // font-weight: bold
+        font-size: .9em

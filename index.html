@@ -7,6 +7,40 @@
   <link rel="stylesheet" href="./dist/style.css">
 </head>
 <body>
-  <h1>Simple Asana</h1>
+  <header class="sa-header">
+    <div class="sa-header-top">
+      <div class="sa-header-top__left">
+        <div class="sa-nav-toggle">
+          <a href="#" class="sa-button-hamburger"></a>
+        </div>
+
+        <div class="sa-nav">
+          <ul class="sa-menu">
+            <li><a href="#" class="sa-menu-item">My Tasks</a></li>
+            <li><a href="#" class="sa-menu-item">Inbox</a></li>
+            <li><a href="#" class="sa-menu-item sa-button-plus">+</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <form action="#" class="sa-form">
+        <div class="sa-search">
+          <input type="text" class="sa-input-search" placeholder="Search"/>
+        </div>
+      </form>
+
+      <div class="sa-header-top__right">
+        <ul class="sa-menu">
+          <li><a href="#" class="sa-menu-item sa-menu--arrow">Help</a></li>
+          <li><a href="#" class="sa-menu-item">Personal Projects</a></li>
+          <li>
+            <a href="#" class="sa-menu-item sa-menu--profile-picture">
+              <img src="./images/profile-picture.jpg" class="sa-profile-picture" alt="User profile picture">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </header>
 </body>
 </html>

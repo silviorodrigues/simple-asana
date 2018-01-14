@@ -1,0 +1,55 @@
+.sa-button-hamburger
+  background-color: transparent
+  border-bottom: 2px solid $light-gray-300
+  border-top: 2px solid $light-gray-300
+  height: 8px
+  position: relative
+  width: 14px
+
+  &::before
+    background-color: $light-gray-300
+    content: ''
+    height: 2px
+    left: 0
+    position: absolute
+    top: 3px
+    width: 14px
+
+  &:hover
+    border-color: $black
+
+    &::before
+      background-color: $black
+
+.sa-button-plus
+  background: linear-gradient(45deg, $pink 0%,$orange 100%)
+  border-radius: 50%
+  color: $white
+  display: block
+  font-size: 1.5em
+  font-weight: lighter
+  height: 30px
+  position: relative
+  text-align: center
+  width: 30px
+
+  &::after
+    background: inherit
+    border-radius: inherit
+    content: ''
+    height: 30px
+    left: -3px
+    opacity: 0
+    position: absolute
+    top: -3px
+    transition: ease all .2s
+    width: 30px
+    z-index: -1
+
+  &:hover
+    color: $white
+
+    &::after
+      height: 36px
+      opacity: .5
+      width: 36px
