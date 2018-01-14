@@ -225,47 +225,7 @@ template {
   background-image: url("../images/background.jpg");
   display: flex;
   justify-content: center;
-  padding: 15px 20px; }
-
-.sa-tasks {
-  min-height: calc(100vh - 130px);
-  width: 70%; }
-  .sa-tasks .sa-task-item {
-    color: #151b26;
-    cursor: pointer;
-    font-size: 0.9em; }
-    .sa-tasks .sa-task-item:hover, .sa-tasks .sa-task-item.active {
-      background-color: #edf8ff; }
-      .sa-tasks .sa-task-item:hover .sa-task-item__content, .sa-tasks .sa-task-item.active .sa-task-item__content {
-        border-top-color: transparent; }
-        .sa-tasks .sa-task-item:hover .sa-task-item__content form, .sa-tasks .sa-task-item.active .sa-task-item__content form {
-          display: block; }
-      .sa-tasks .sa-task-item:hover + .sa-task-item .sa-task-item__content, .sa-tasks .sa-task-item.active + .sa-task-item .sa-task-item__content {
-        border-top-color: transparent; }
-    .sa-tasks .sa-task-item:first-of-type .sa-task-item__content {
-      border-top: 0; }
-    .sa-tasks .sa-task-item:last-of-type .sa-task-item__content {
-      border-bottom: 1px solid #e0e6e8; }
-    .sa-tasks .sa-task-item:last-of-type:hover .sa-task-item__content, .sa-tasks .sa-task-item:last-of-type.active .sa-task-item__content {
-      border-color: transparent; }
-    .sa-tasks .sa-task-item .sa-task-item__content {
-      align-items: center;
-      display: flex;
-      border-top: 1px solid #e0e6e8;
-      margin: 0 30px;
-      padding: 10px 0;
-      justify-content: space-between; }
-      .sa-tasks .sa-task-item .sa-task-item__content img {
-        margin-right: 10px; }
-      .sa-tasks .sa-task-item .sa-task-item__content p {
-        display: inline-block;
-        vertical-align: super; }
-      .sa-tasks .sa-task-item .sa-task-item__content form {
-        display: none; }
-
-.sa-edit-task {
-  margin-left: 15px;
-  width: 50%; }
+  padding: 15px 20px 0 20px; }
 
 .sa-title-h1 {
   color: #151b26;
@@ -407,15 +367,54 @@ template {
 
 .sa-card {
   background-color: #fff;
-  border-radius: 3px;
-  box-shadow: 0px 0px 5px 0px rgba(21, 27, 38, 0.3); }
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0px 0px 5px 0px rgba(21, 27, 38, 0.3);
+  height: calc(100vh - 144px);
+  overflow-y: auto; }
   .sa-card .sa-card__header {
     align-items: center;
     box-shadow: 0px 1px 3px 0px rgba(21, 27, 38, 0.1);
     display: flex;
     justify-content: space-between;
     padding: 10px 30px; }
-  .sa-card .sa-card__content {
-    padding: 10px 0; }
+
+.sa-tasks {
+  width: 70%; }
+  .sa-tasks .sa-task-item {
+    color: #151b26;
+    cursor: pointer;
+    font-size: 0.9em; }
+    .sa-tasks .sa-task-item:hover, .sa-tasks .sa-task-item.active {
+      background-color: #edf8ff; }
+      .sa-tasks .sa-task-item:hover .sa-task-item__content, .sa-tasks .sa-task-item.active .sa-task-item__content {
+        border-top-color: transparent; }
+        .sa-tasks .sa-task-item:hover .sa-task-item__content form, .sa-tasks .sa-task-item.active .sa-task-item__content form {
+          display: block; }
+      .sa-tasks .sa-task-item:hover + .sa-task-item .sa-task-item__content, .sa-tasks .sa-task-item.active + .sa-task-item .sa-task-item__content {
+        border-top-color: transparent; }
+    .sa-tasks .sa-task-item:first-of-type .sa-task-item__content {
+      border-top: 0; }
+    .sa-tasks .sa-task-item:last-of-type .sa-task-item__content {
+      border-bottom: 1px solid #e0e6e8; }
+    .sa-tasks .sa-task-item:last-of-type:hover .sa-task-item__content, .sa-tasks .sa-task-item:last-of-type.active .sa-task-item__content {
+      border-color: transparent; }
+    .sa-tasks .sa-task-item .sa-task-item__content {
+      align-items: center;
+      display: flex;
+      border-top: 1px solid #e0e6e8;
+      margin: 0 30px;
+      padding: 10px 0;
+      justify-content: space-between; }
+      .sa-tasks .sa-task-item .sa-task-item__content img {
+        margin-right: 10px; }
+      .sa-tasks .sa-task-item .sa-task-item__content p {
+        display: inline-block;
+        vertical-align: super; }
+      .sa-tasks .sa-task-item .sa-task-item__content form {
+        display: none; }
+
+.sa-edit-task {
+  margin-left: 15px;
+  width: 50%; }
 
 /*# sourceMappingURL=style.css.map */
