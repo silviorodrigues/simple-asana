@@ -11,14 +11,14 @@
 
 .sa-button-hamburger
   background-color: transparent
-  border-bottom: 2px solid $light-gray-300
-  border-top: 2px solid $light-gray-300
+  border-bottom: 2px solid $light-gray-400
+  border-top: 2px solid $light-gray-400
   height: 8px
   position: relative
   width: 14px
 
   &::before
-    background-color: $light-gray-300
+    background-color: $light-gray-400
     content: ''
     height: 2px
     left: 0
@@ -65,3 +65,25 @@
       height: 36px
       opacity: .5
       width: 36px
+
+.sa-button-action
+  background-color: transparent
+  border: 1px solid $light-gray-300
+  border-radius: 50%
+  display: inline-block
+  text-align: center
+  height: 30px
+  width: 30px
+  transition: ease border .2s
+
+  &:hover
+    border: 1px solid $blue
+
+  img
+    margin-top: 7px
+
+.sa-button--dashed
+  border: 1px dashed $light-gray-300
+
+  &:hover
+    border: 1px dashed $blue

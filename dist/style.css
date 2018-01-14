@@ -16,7 +16,7 @@ section {
   display: block; }
 
 h1 {
-  font-size: 2em; }
+  font-size: 1.8em; }
 
 p {
   margin: 0; }
@@ -334,6 +334,25 @@ template {
       opacity: 0.5;
       width: 36px; }
 
+.sa-button-action {
+  background-color: transparent;
+  border: 1px solid #b7bfc6;
+  border-radius: 50%;
+  display: inline-block;
+  text-align: center;
+  height: 30px;
+  width: 30px;
+  transition: ease border 0.2s; }
+  .sa-button-action:hover {
+    border: 1px solid #17abf5; }
+  .sa-button-action img {
+    margin-top: 7px; }
+
+.sa-button--dashed {
+  border: 1px dashed #b7bfc6; }
+  .sa-button--dashed:hover {
+    border: 1px dashed #17abf5; }
+
 .sa-form input, .sa-form textarea {
   border: 1px solid #d5dce0; }
   .sa-form input::-webkit-input-placeholder, .sa-form textarea::-webkit-input-placeholder {
@@ -420,12 +439,20 @@ template {
   width: 50%; }
   .sa-edit-task .sa-edit-task__profile {
     align-items: center;
-    font-size: 0.9em;
-    display: flex; }
+    display: flex;
+    font-size: 0.9em; }
     .sa-edit-task .sa-edit-task__profile img {
       margin-right: 10px; }
     .sa-edit-task .sa-edit-task__profile form {
       margin-left: 5px; }
+  .sa-edit-task .sa-edit-task__actions a {
+    margin: 0 2px; }
+  .sa-edit-task .sa-edit-task__actions p {
+    color: #85909a;
+    display: inline-block;
+    font-size: 0.9em;
+    margin-right: 12px;
+    vertical-align: text-top; }
   .sa-edit-task .sa-edit-task__close {
     align-self: flex-start;
     cursor: pointer;
