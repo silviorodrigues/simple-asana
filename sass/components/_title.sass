@@ -1,0 +1,19 @@
+.sa-title-h1
+  color: $black
+  display: inline-block
+  font-weight: normal
+  margin: 0
+
+  &.sa-title--arrow
+    position: relative
+
+    &::after
+      background-image: url('../images/arrow.svg')
+      background-repeat: no-repeat
+      background-size: contain
+      content: ''
+      height: 6px
+      position: absolute
+      right: -14px
+      top: calc(50% - 2px)
+      width: 10px
