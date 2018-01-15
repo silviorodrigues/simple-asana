@@ -1,6 +1,9 @@
 .sa-form
   input, textarea
-    border: 1px solid $light-gray-200
+    outline: 0
+
+    &:focus
+      box-shadow: 0 0 3px $blue
 
     &::-webkit-input-placeholder
       color: $light-gray-400
@@ -9,7 +12,7 @@
     position: relative
 
     &::before
-      background-image: url("../images/search.png")
+      background-image: url('../images/search.png')
       content: ''
       height: 15px
       left: 11px
@@ -19,18 +22,51 @@
       z-index: 2
 
     .sa-input-search
+      border: 1px solid $light-gray-200
       border-radius: 15px
       height: 30px
-      outline: 0
       padding: 0 15px 0 35px
       width: 100%
 
-      &:focus
-        box-shadow: 0 0 3px $blue
-
       &::-webkit-input-placeholder
-        // font-weight: bold
         font-size: .9em
 
-  .sa-checkbox
-    
+  .sa-input-title
+    margin-bottom: 14px
+    position: relative
+
+    &::before
+      background-image: url('../images/check.svg')
+      background-repeat: no-repeat
+      background-size: cover
+      content: ''
+      height: 30px
+      left: 10px
+      position: absolute
+      top: calc(50% - 15px)
+      width: 30px
+
+    input
+      border: 0
+      font-size: 1.6em
+      padding: 4px 20px 4px 50px
+      width: 100%
+
+  .sa-input-description
+    margin-left: 39px
+    padding: 10px
+    width: calc(100% - 39px)
+
+  .sa-input-title,
+  .sa-input-description
+    border: 1px solid transparent
+    border-radius: 3px
+
+    &:hover
+      border: 1px solid $light-gray-200
+
+  .sa-input-comment
+    border: 1px solid $light-gray-200
+    border-radius: 3px
+    padding: 15px 10px
+    width: 100%
