@@ -14,7 +14,17 @@ let simpleAsana = function() {
     let data = _loadData();
     let taskToEdit = taskId && data.tasks.find((task) => task.id === taskId);
 
-    taskToEdit ? _openPanel(taskToEdit) : _openPanel();
+    if(taskToEdit) {
+      _openPanel(taskToEdit)
+    } else {
+      let newTaskId = data.tasks.length ? data.tasks[data.tasks.length-1].id + 1 : 1;
+
+      data.tasks.push({"id": newTaskId, "title": "", "description": ""});
+
+      _openPanel();
+      _saveData(data);
+      _renderNewLine(newTaskId);
+    }
   },
 
   closePanel = () => {
@@ -26,7 +36,7 @@ let simpleAsana = function() {
   let _loadData = () => {
     let data = localStorage.getItem('simpleAsanaTasks');
 
-    return JSON.parse(data);
+    return data ? JSON.parse(data) : {tasks: []};
   },
 
   _saveData = (data) => {
@@ -51,6 +61,21 @@ let simpleAsana = function() {
     tasksList.innerHTML = tasksHTML.join('');
   },
 
+  _renderNewLine = (id) => {
+    let newLine = `<div class="sa-task-item" id="${id}">
+                <div class="sa-task-item__content">
+                  <div>
+                    <img src="./images/check.svg" alt="Check task">
+                    <p></p>
+                  </div>
+                  <form action="#"><input type="radio"></form>
+                </div>
+              </div>`;
+
+    tasksList.insertAdjacentHTML('beforeend', newLine);
+    document.getElementById(id).addEventListener('click',  () => openTask(id));
+  }
+
   _openPanel = (task=null) => {
     if(task) {
       inputTitle.value = task.title;
@@ -61,6 +86,7 @@ let simpleAsana = function() {
     }
 
     editPanel.classList.add('active');
+    inputTitle.focus();
   };
 
   return {
