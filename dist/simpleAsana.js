@@ -28,7 +28,22 @@ let simpleAsana = function() {
       _openPanel(null, newTaskId);
       _saveData(data);
       _renderNewLine(newTaskId);
-    }
+    };
+  },
+
+  editTask = () => {
+    let data = _loadData();
+    let id = parseInt(inputId.value);
+
+    data.tasks.map((task) => {
+      if(task.id === id) {
+        task.title = inputTitle.value;
+        task.description = inputDescription.value;
+      };
+    });
+
+    _saveData(data);
+    document.getElementById(id).getElementsByClassName('sa-task-title')[0].innerHTML = inputTitle.value;
   },
 
   closePanel = () => {
@@ -55,7 +70,7 @@ let simpleAsana = function() {
                 <div class="sa-task-item__content">
                   <div>
                     <img src="./images/check.svg" alt="Check task ${task.title}">
-                    <p>${task.title}</p>
+                    <p class="sa-task-title">${task.title}</p>
                   </div>
                   <form action="#"><input type="radio"></form>
                 </div>
@@ -70,7 +85,7 @@ let simpleAsana = function() {
                 <div class="sa-task-item__content">
                   <div>
                     <img src="./images/check.svg" alt="Check task">
-                    <p></p>
+                    <p class="sa-task-title"></p>
                   </div>
                   <form action="#"><input type="radio"></form>
                 </div>
@@ -106,6 +121,7 @@ let simpleAsana = function() {
   return {
     init: init,
     openTask: openTask,
-    closePanel: closePanel
+    closePanel: closePanel,
+    editTask: editTask
   }
 }();
