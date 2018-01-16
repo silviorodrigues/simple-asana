@@ -1,8 +1,6 @@
 const taskItemClass = document.getElementsByClassName('sa-task-item'),
       newTaskButton = document.getElementById('new-task-button'),
-      closePanelButton = document.getElementById('close-panel-button'),
-      inputTitle = document.getElementById('task-title'),
-      inputDescription = document.getElementById('task-description');
+      closePanelButton = document.getElementById('close-panel-button');
 
 simpleAsana.init();
 

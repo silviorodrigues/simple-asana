@@ -1,6 +1,7 @@
 let simpleAsana = function() {
   const tasksList = document.getElementById('tasks-list'),
         editPanel = document.getElementById('edit-panel'),
+        inputId = document.getElementById('task-id'),
         inputTitle = document.getElementById('task-title'),
         inputDescription = document.getElementById('task-description');
 
@@ -24,7 +25,7 @@ let simpleAsana = function() {
 
       data.tasks.push({"id": newTaskId, "title": "", "description": ""});
 
-      _openPanel();
+      _openPanel(null, newTaskId);
       _saveData(data);
       _renderNewLine(newTaskId);
     }
@@ -83,11 +84,13 @@ let simpleAsana = function() {
     line.classList.add('active');
   }
 
-  _openPanel = (task=null) => {
+  _openPanel = (task=null, id=null) => {
     if(task) {
+      inputId.value = task.id;
       inputTitle.value = task.title;
       inputDescription.value = task.description;
     } else {
+      inputId.value = id;
       inputTitle.value = '';
       inputDescription.value = '';
     }
