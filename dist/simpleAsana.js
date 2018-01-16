@@ -14,8 +14,11 @@ let simpleAsana = function() {
     let data = _loadData();
     let taskToEdit = taskId && data.tasks.find((task) => task.id === taskId);
 
+    _clearActiveTasksClass();
+
     if(taskToEdit) {
-      _openPanel(taskToEdit)
+      _openPanel(taskToEdit);
+      document.getElementById(taskToEdit.id).classList.add('active');
     } else {
       let newTaskId = data.tasks.length ? data.tasks[data.tasks.length-1].id + 1 : 1;
 
@@ -73,7 +76,11 @@ let simpleAsana = function() {
               </div>`;
 
     tasksList.insertAdjacentHTML('beforeend', newLine);
-    document.getElementById(id).addEventListener('click',  () => openTask(id));
+
+    let line = document.getElementById(id);
+
+    line.addEventListener('click',  () => openTask(id));
+    line.classList.add('active');
   }
 
   _openPanel = (task=null) => {
@@ -87,6 +94,10 @@ let simpleAsana = function() {
 
     editPanel.classList.add('active');
     inputTitle.focus();
+  },
+
+  _clearActiveTasksClass = () => {
+    tasksList.childNodes.forEach(task => task.classList.remove('active'));
   };
 
   return {
