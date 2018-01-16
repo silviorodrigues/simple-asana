@@ -1,39 +1,14 @@
-let simpleAsana = function() {
-  const tasksList = document.getElementById('tasks-list');
-
-  let init = function() {
-    let data = _loadData();
-
-    _renderTasks(data);
-  };
-
-  //private
-
-  let _loadData = () => {
-    let data = localStorage.getItem('simpleAsanaTasks');
-
-    return JSON.parse(data);
-  },
-
-  _renderTasks = (data) => {
-    let tasksHTML = data.tasks.map((task) => {
-      return `<div class="sa-task-item" id="${task.id}">
-                <div class="sa-task-item__content">
-                  <div>
-                    <img src="./images/check.svg" alt="Check task ${task.title}">
-                    <p>${task.title}</p>
-                  </div>
-                  <form action="#"><input type="radio"></form>
-                </div>
-              </div>`;
-    });
-
-    tasksList.innerHTML = tasksHTML.join('');
-  };
-
-  return {
-    init: init
-  }
-}();
+const taskItemClass = document.getElementsByClassName('sa-task-item'),
+      newTaskButton = document.getElementById('new-task-button');
 
 simpleAsana.init();
+
+Array.prototype.slice.call(taskItemClass).map((task) => {
+  task.addEventListener('click', (e) => {
+    let taskId = e.target.closest('.sa-task-item').id;
+
+    simpleAsana.editTask(parseInt(taskId));
+  });
+});
+
+newTaskButton.addEventListener('click', () => simpleAsana.newTask());

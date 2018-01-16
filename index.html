@@ -53,14 +53,14 @@
   <main class="sa-main">
     <div class="sa-tasks sa-card">
       <div class="sa-card__header">
-        <a href="#" class="sa-button-primary">Add Task</a>
+        <a href="#" class="sa-button-primary" id="new-task-button">Add Task</a>
         <a href="#"><img src="./images/wheel.png" alt="Tasks settings"></a>
       </div>
 
       <div class="sa-tasks-list sa-card__content" id="tasks-list"></div>
     </div>
 
-    <div class="sa-edit-task sa-card">
+    <div class="sa-edit-task sa-card" id="edit-panel">
       <div class="sa-card__header">
         <div class="sa-edit-task__profile">
           <img src="./images/profile-picture.jpg" class="sa-profile-picture" alt="User profile picture">
@@ -86,9 +86,9 @@
       <div class="sa-card__content">
         <form action="#" class="sa-form">
           <div class="sa-input-title">
-            <input type="text" placeholder="New task">
+            <input type="text" id="task-title" placeholder="New task">
           </div>
-          <textarea class="sa-input-description" placeholder="Description" rows="3"></textarea>
+          <textarea class="sa-input-description" id="task-description" placeholder="Description" rows="3"></textarea>
         </form>
       </div>
 
@@ -100,6 +100,7 @@
       </div>
     </div>
   </main>
+  <script src="./dist/simpleAsana.js"></script>
   <script src="./dist/script.js"></script>
 </body>
 </html>
