@@ -21,6 +21,10 @@ let simpleAsana = function() {
     let data = _loadData();
 
     _openPanel();
+  },
+
+  closePanel = () => {
+    editPanel.classList.remove('active');
   };
 
   //private
@@ -62,6 +66,7 @@ let simpleAsana = function() {
   return {
     init: init,
     editTask: editTask,
-    newTask: newTask
+    newTask: newTask,
+    closePanel: closePanel
   }
 }();

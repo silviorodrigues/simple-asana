@@ -1,5 +1,6 @@
 const taskItemClass = document.getElementsByClassName('sa-task-item'),
-      newTaskButton = document.getElementById('new-task-button');
+      newTaskButton = document.getElementById('new-task-button'),
+      closePanelButton = document.getElementById('close-panel-button');
 
 simpleAsana.init();
 
@@ -12,3 +13,4 @@ Array.prototype.slice.call(taskItemClass).map((task) => {
 });
 
 newTaskButton.addEventListener('click', () => simpleAsana.newTask());
+closePanelButton.addEventListener('click', () => simpleAsana.closePanel());
