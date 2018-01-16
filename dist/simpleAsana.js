@@ -10,17 +10,11 @@ let simpleAsana = function() {
     _renderTasks(data);
   },
 
-  editTask = (taskId) => {
+  openTask = (taskId=null) => {
     let data = _loadData();
     let taskToEdit = taskId && data.tasks.find((task) => task.id === taskId);
 
-    _openPanel(taskToEdit);
-  },
-
-  newTask = () => {
-    let data = _loadData();
-
-    _openPanel();
+    taskToEdit ? _openPanel(taskToEdit) : _openPanel();
   },
 
   closePanel = () => {
@@ -33,6 +27,12 @@ let simpleAsana = function() {
     let data = localStorage.getItem('simpleAsanaTasks');
 
     return JSON.parse(data);
+  },
+
+  _saveData = (data) => {
+    let tasks = JSON.stringify(data);
+
+    localStorage.setItem('simpleAsanaTasks', tasks);
   },
 
   _renderTasks = (data) => {
@@ -65,8 +65,7 @@ let simpleAsana = function() {
 
   return {
     init: init,
-    editTask: editTask,
-    newTask: newTask,
+    openTask: openTask,
     closePanel: closePanel
   }
 }();
